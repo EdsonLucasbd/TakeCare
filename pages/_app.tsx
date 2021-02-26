@@ -1,4 +1,5 @@
 import '../src/styles/global.css';
+
 import { ChallengesProvider } from '../src/contexts/ChallengesContext';
 
 function MyApp({ Component, pageProps }) {
@@ -6,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     <ChallengesProvider>
       <Component {...pageProps} />
     </ChallengesProvider>
-  )
+  );
 }
 
 export default MyApp
