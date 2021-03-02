@@ -1,4 +1,3 @@
-
 <h2>:information_source: Sobre o projeto</h2>
 <h4>
   O Take Care é uma aplicação que utiliza a técnica de pomodoro para ajudar pessoas a se exercitarem durante seus estudos ou trabalhos no computador.</br>
