@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<h2>:information_source: Sobre o projeto</h2>
+<h4>
+  O Take Care é uma aplicação que utiliza a técnica de pomodoro para ajudar pessoas a se exercitarem durante seus estudos ou trabalhos no computador.</br>
+  Foi desenvolvida durante a Next Level Week 4 da Rocketseat.</br></br>
+  Voçê pode ver o resultado aqui: <a href="https://takecare-gamma.vercel.app/">Take Care</a>
+</h4>
 
-First, run the development server:
+<h2>:gear: Elementos e funcionalidades</h2>
+<ul>
+  <li>Barra de experiência;</li>
+  <li>Cronômetro;</li>
+  <li>Botão "Iniciar ciclo" pra dar inicio ao cronômetro;</li>
+  <li>Botão "Abandonar ciclo" pra parar e resetar o cronômetro;</li>
+  <li>Card lateral onde são exibidos os desafios;</li>
+  <li>Botão "Completei", finaliza um desafio e atualiza a experiência e o nível, se possível;</li>
+  <li>Botão "Falhei", finaliza um desafio e reseta o cronômetro;</li>
+  <li>Apresenta um modal a cada novo nível alcançado;</li>
+  <li>Dados (nível, experiência e desafios concluídos) salvos em cookies;</li>
+</ul>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<h2>A ser implementado</h2>
+<ul>
+  <li>Tela inicial;</li>
+  <li>Login com github;</li>
+  <li>Side Bar;</li>
+  <li>Tema Dark;</li>
+  <li>Compartilhamento nas redes sociais;</li>
+  <li>Responsividade;</li>
+</ul>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+🚧 Em construção... 🚧
