@@ -1,0 +1,29 @@
+.container {
+  position: absolute;
+  width: 7rem;
+  height: 100%;
+  left: 0rem;
+  top: 0rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--white);
+}
+
+.container > img {
+  margin-top: 30%;
+  width: 2rem;
+}
+
+.switcher {
+  margin-bottom: 30%;
+}
+
+.switcher img {
+  margin-top: 20%;
+  margin-left: 10%;
+  width: 0.9rem;
+}

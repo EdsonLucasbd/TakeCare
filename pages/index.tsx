@@ -16,6 +16,7 @@ interface HomeProps {
 }
 
 import styles from '../src/styles/pages/Home.module.css';
+import { SideBar } from '../src/components/SideBar';
 
 export default function Home(props) {
   
@@ -25,13 +26,15 @@ export default function Home(props) {
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
+      <SideBar />
+      
       <div className={styles.container}>
         <Head>
           <title>Inicio | Take Care</title>
         </Head>
 
         <ExperienceBar />
-
+        
         <CountDownProvider>
           <section>
             <div>

@@ -69,7 +69,7 @@
   color: var(--title);
 }
 
-.countDownButtonActive:hover {
+.countDownButtonActive:not(:disabled):hover {
   background: var(--red);
   color: var(--white);
 }
@@ -78,4 +78,8 @@
   background: var(--white);
   color: var(--text);
   cursor: not-allowed;
+}
+
+.buttonIcons {
+  margin-left: 10px;
 }
