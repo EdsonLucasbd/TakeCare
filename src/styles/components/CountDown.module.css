@@ -14,7 +14,7 @@
   justify-content: space-evenly;
 
   background: var(--white);
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 60px var(--box-shadow);
   border-radius: 5px;
   font-size: 8.5rem;
   text-align: center;
@@ -25,11 +25,11 @@
 }
 
 .countDownContainer > div span:first-child {
-  border-right: 1px solid #f0f1f3;
+  border-right: 1px solid var(--lateral-border);
 }
 
 .countDownContainer > div span:last-child {
-  border-left: 1px solid #f0f1f3;
+  border-left: 1px solid var(--lateral-border);
 }
 
 .countDownContainer > span {
