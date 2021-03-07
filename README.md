@@ -29,14 +29,13 @@
 </ul>
 
 <h2>A ser implementado</h2>
-<ul>
-  <li>Tela inicial;</li>
-  <li>Login com github;</li>
-  <li><s>Side Bar;</s></li>
-  <li><s>Tema Dark;</s></li>
-  <li>Compartilhamento nas redes sociais;</li>
-  <li>Responsividade;</li>
-</ul>
+
+- [ ] Tela inicial
+- [ ] Login com github
+- [x] <s>Side Bar</s>
+- [x] <s>Tema Dark</s>
+- [ ] Compartilhamento nas redes sociais
+- [ ] Responsividade
 
 <h2>🛠️ Como instalar</h2>
 <ul>
