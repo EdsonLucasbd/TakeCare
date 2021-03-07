@@ -47,4 +47,4 @@
 
 <hr>
 </br></br>
-<p align="center">Feito com 💖 by Edson Lucas</p>
+<p align="center">Feito com 💖 por Edson Lucas</p>
