@@ -11,6 +11,7 @@ export default {
     green: '#4cd62b',
     blue: '#5965e0',
     blueDark: '#4953b8',
+    blueText: '#b2b9ff',
     background: '#090a0a',
     text: '#a8a095',
     blueTwitter: '#2aa9e0',

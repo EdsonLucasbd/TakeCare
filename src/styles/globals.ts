@@ -17,6 +17,7 @@ export default createGlobalStyle`
     --green: ${props => props.theme.colors.green};
     --blue: ${props => props.theme.colors.blue};
     --blue-dark: ${props => props.theme.colors.blueDark};
+    --blue-text: ${props => props.theme.colors.blueText};
     --blue-twitter: ${props => props.theme.colors.blueTwitter};
     --box-shadow: ${props => props.theme.colors.boxShadow};
     --border-bottom: ${props => props.theme.colors.borderBottom};

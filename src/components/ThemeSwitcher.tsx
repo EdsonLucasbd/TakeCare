@@ -3,7 +3,7 @@ import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
 
 interface Props {
-  handleToggleTheme(): void;
+  handleToggleTheme: () => void;
 }
 
 export function ThemeSwitcher({ handleToggleTheme }: Props) {
