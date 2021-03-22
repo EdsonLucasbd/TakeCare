@@ -10,6 +10,8 @@ import dark from '../src/styles/themes/dark';
 
 import usePersistedState from '../src/utils/usePersistedState';
 
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIosRounded';
+
 export default function login() {
   const [theme] = usePersistedState('theme', light);
 
@@ -33,9 +35,12 @@ export default function login() {
           </div>
         </div>
 
-        <form className={styles.form}>
-          <input type="text" id="inputName" placeholder="Informe seu username" />
-        </form>
+        <div className={styles.buttonContainer}>
+          <button type="button" className={styles.loginButton}>Acessar com Github</button>
+          <span className={styles.arrowIcon}>
+            <ArrowForwardIos fontSize="large" style={{ color: '#b2b9ff' }}/>
+          </span>
+        </div>
       </div>
     </ThemeProvider>
   )

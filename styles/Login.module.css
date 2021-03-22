@@ -79,12 +79,18 @@
   height: 2.5rem;
   margin-right: 1rem;
 }
-.form {
+
+.buttonContainer{
   position: absolute;
   top: 33.81rem;
   left: 51.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
 }
-.form input {
+.loginButton {
   width: 21.25rem;
   height: 5rem;
   background: linear-gradient(90deg, var(--blue-dark) 0%, rgba(73, 83, 184, 0.2) 100%);
@@ -95,4 +101,13 @@
   font-size: 20px;
   line-height: 34px;
   color: var(--text-blue);
+}
+.arrowIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-dark);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0px 5px 5px 0px;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 import { CompletedChallenges } from '../src/components/CompletedChallenges';
 import { CountDown } from '../src/components/CountDown';
@@ -26,16 +27,22 @@ import GlobalStyles from '../src/styles/globals';
 import styles from '../src/styles/pages/Home.module.css';
 import light from '../src/styles/themes/light';
 import dark from '../src/styles/themes/dark';
+import Redirect from '../src/components/Redirect';
 
 export default function Home(props) {
   const [theme, setTheme] = usePersistedState('theme', light);
+  const [ session, loading ] = useSession();
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
   };
   
+  if (!session) return <Redirect to="/login" />;
+  
   return (
+    
     <ThemeProvider theme={theme}>
+      {session && 
       <ChallengesProvider
         level={props.level}
         currentExperience={props.currentExperience}
@@ -46,7 +53,7 @@ export default function Home(props) {
         
         <div className={styles.container}>
           <Head>
-            <title>Inicio | Take Care</title>
+            <title>Home | Take Care</title>
           </Head>
 
           <ExperienceBar />
@@ -66,6 +73,7 @@ export default function Home(props) {
           </CountDownProvider>
         </div>
       </ChallengesProvider>
+      }
     </ThemeProvider>
   )
 }
