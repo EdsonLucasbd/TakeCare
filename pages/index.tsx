@@ -37,12 +37,12 @@ export default function Home(props) {
     setTheme(theme.title === 'light' ? dark : light);
   };
   
-  if (!session) return <Redirect to="/login" />;
-  
+  if (!session) {
+    return <Redirect to="/login" />;
+  }
+
   return (
-    
     <ThemeProvider theme={theme}>
-      {session && 
       <ChallengesProvider
         level={props.level}
         currentExperience={props.currentExperience}
@@ -73,7 +73,6 @@ export default function Home(props) {
           </CountDownProvider>
         </div>
       </ChallengesProvider>
-      }
     </ThemeProvider>
   )
 }

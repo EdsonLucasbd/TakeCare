@@ -11,9 +11,15 @@ import dark from '../src/styles/themes/dark';
 import usePersistedState from '../src/utils/usePersistedState';
 
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIosRounded';
+import { signIn, useSession } from 'next-auth/client'
+import Redirect from '../src/components/Redirect';
+
 
 export default function login() {
   const [theme] = usePersistedState('theme', light);
+  const [ session ] = useSession();
+   
+  if (session) return <Redirect to="/" />;
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,7 +42,7 @@ export default function login() {
         </div>
 
         <div className={styles.buttonContainer}>
-          <button type="button" className={styles.loginButton}>Acessar com Github</button>
+          <button type="button" onClick={() => signIn('auth0')} className={styles.loginButton}>Acessar o Take Care</button>
           <span className={styles.arrowIcon}>
             <ArrowForwardIos fontSize="large" style={{ color: '#b2b9ff' }}/>
           </span>
