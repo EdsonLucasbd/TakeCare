@@ -30,7 +30,7 @@
 
 <h2>A ser implementado</h2>
 
-- [ ] Tela inicial
+- [x] <s>Tela inicial</s>
 - [ ] Login com github
 - [x] <s>Side Bar</s>
 - [x] <s>Tema Dark</s>
