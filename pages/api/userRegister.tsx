@@ -1,21 +1,24 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { VercelRequest, VercelResponse } from "@vercel/node";
 import connect from '../../src/utils/database';
 
-interface ResponseType {
-  message: string;
-}
-
 export default async (
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseType>
-): Promise<void> => {
-  const { name, image, userId } = req.body;
+  req: VercelRequest,
+  res: VercelResponse
+) => {
+  const { 
+    name, 
+    image, 
+    userId, 
+    completedChallenges,
+    level,
+    currentExperience,
+    totalExperience } = req.body;
   
   if (req.method === 'POST') {
     const { db } = await connect();
     
     const response = await db.collection('users').insertOne({
-      userId,
+      _id: userId,
       name,
       image,
       completedChallenges: 0,
@@ -27,6 +30,18 @@ export default async (
 
     res.status(200).json(response.ops[0]);
     
+  } else if (req.method === 'PUT') {
+    const { db } = await connect();
+
+    const response = await db.collection('users').findOneAndUpdate(
+      {_id: userId},
+      {
+        $set: { completedChallenges, level, currentExperience, totalExperience },
+      }
+    );
+
+    return res.status(200).json(response);
+
   } else {
     res.status(400).json({ message: 'Wrong request method' });
   }

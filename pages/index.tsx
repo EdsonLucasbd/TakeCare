@@ -31,7 +31,7 @@ import Redirect from '../src/components/Redirect';
 
 export default function Home(props) {
   const [theme, setTheme] = usePersistedState('theme', light);
-  const [ session, loading ] = useSession();
+  const [ session ] = useSession();
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
