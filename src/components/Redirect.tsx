@@ -5,7 +5,7 @@ export default function Redirect({ to }) {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(to);
+    router.replace(to);
   }, [to]);
 
   return null;
