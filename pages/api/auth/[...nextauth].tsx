@@ -19,24 +19,24 @@ const options = {
 
   callbacks: {
     session: async (session: any, user: any, ...rest: any) => {
-      const textToReplace = "https://avatars.githubusercontent.com/u/";
+      const textToReplace = 'https://avatars.githubusercontent.com/u/';
       const remainingText = user.picture.replace(textToReplace, "");
       session.userId = remainingText.split('?')[0];
       
       const { db } = await connect();
       const collection = db.collection('users');
 
-      const findUser = await collection.findOne({ _id: session.userId });
+      const findUser = await collection.findOne({ userId: session.userId });
 
       {!findUser && (
         await collection.insertOne({
-          _id: session.userId,
+          userId: session.userId,
           name: user.name,
-          image: user.image,
+          image: user.picture,
           challengesCompleted: 0,
           level: 1,
           currentExperience: 0,
-          totalExperience: 0,
+          accumulateExperience: 0,
           registeredAt: new Date(),
         })
       )};

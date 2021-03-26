@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
-import { signIn, signOut, useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client'
 
 import { CompletedChallenges } from '../src/components/CompletedChallenges';
 import { CountDown } from '../src/components/CountDown';
@@ -37,16 +37,14 @@ export default function Home(props) {
     setTheme(theme.title === 'light' ? dark : light);
   };
   
-  if (!session) {
-    return <Redirect to="/login" />;
-  }
+  if (!session) return <Redirect to="/login" />;
 
   return (
     <ThemeProvider theme={theme}>
       <ChallengesProvider
-        level={props.level}
-        currentExperience={props.currentExperience}
-        challengesCompleted={props.challengesCompleted}
+        // level={props.level}
+        // currentExperience={props.currentExperience}
+        // challengesCompleted={props.challengesCompleted}
       >
         <GlobalStyles />
         <SideBar toggleTheme={toggleTheme}/>
@@ -77,14 +75,14 @@ export default function Home(props) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//   const { level, currentExperience, challengesCompleted } = ctx.req.cookies
 
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    }
-  }
-}
+//   return {
+//     props: {
+//       level: Number(level),
+//       currentExperience: Number(currentExperience),
+//       challengesCompleted: Number(challengesCompleted),
+//     }
+//   }
+// }

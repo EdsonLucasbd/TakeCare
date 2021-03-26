@@ -13,7 +13,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
       completedChallenges: 0,
       level: 1,
       currentExperience: 0,
-      totalExperience: 0,
+      accumulateExperience: 0,
       registeredAt: new Date(),
     });
 

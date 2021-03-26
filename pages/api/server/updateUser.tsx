@@ -7,16 +7,16 @@ export default async (
 ) => {
   const { 
     userId, 
-    completedChallenges,
     level,
     currentExperience,
-    totalExperience } = req.body;
+    accumulateExperience,
+    completedChallenges} = req.body;
     const { db } = await connect();
 
     const response = await db.collection('users').findOneAndUpdate(
       {_id: userId},
       {
-        $set: { completedChallenges, level, currentExperience, totalExperience },
+        $set: { completedChallenges, level, currentExperience, accumulateExperience },
       }
     );
 

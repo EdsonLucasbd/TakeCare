@@ -10,6 +10,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
     "js-cookie": "^2.2.1",
     "mongodb": "^3.6.5",
     "next": "10.0.7",
