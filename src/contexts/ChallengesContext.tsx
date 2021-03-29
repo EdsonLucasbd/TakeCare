@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
 import { LevelUpMotal } from "../components/LevelUpModal";
 import { useSession } from "next-auth/client";
-import axios, { AxiosPromise } from "axios";
+import axios from "axios";
 
 interface Challenge {
   type: 'body'| 'eye';
