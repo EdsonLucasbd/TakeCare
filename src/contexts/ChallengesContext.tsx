@@ -27,9 +27,6 @@ interface ChallengesContextData {
 
 interface challengesProviderProps {
   children: ReactNode;
-  // level: number;
-  // currentExperience: number;
-  // challengesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);

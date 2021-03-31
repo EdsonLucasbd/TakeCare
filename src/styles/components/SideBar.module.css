@@ -27,3 +27,23 @@
   margin-left: 20%;
   width: 0.7rem;
 }
+
+.iconsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconsContainer button {
+  border: none;
+  background-color: transparent;
+  margin: 1rem 0;
+}
+
+.home {
+  color: var(--text);
+}
+
+.ranking {
+  color: var(--text);
+}
+
