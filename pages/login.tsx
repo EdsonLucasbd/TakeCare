@@ -46,7 +46,7 @@ export default function login() {
             className={styles.loginButton}>
             <span>Acessar o Take Care</span>
             <div className={styles.arrowIcon}>
-              <ArrowForwardIos fontSize="large" style={{ color: '#b2b9ff' }}/>
+              <ArrowForwardIos fontSize="large"/>
             </div>
           </button>
         </div>
