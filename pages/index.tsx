@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
 import { useSession } from 'next-auth/client'
 
 import { CompletedChallenges } from '../src/components/CompletedChallenges';
@@ -16,12 +15,6 @@ import { ThemeProvider } from 'styled-components';
 
 import usePersistedState from '../src/utils/usePersistedState';
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
-
 import GlobalStyles from '../src/styles/globals';
 
 import styles from '../src/styles/pages/Home.module.css';
@@ -29,7 +22,7 @@ import light from '../src/styles/themes/light';
 import dark from '../src/styles/themes/dark';
 import Redirect from '../src/components/Redirect';
 
-export default function Home(props) {
+export default function Home() {
   const [theme, setTheme] = usePersistedState('theme', light);
   const [ session ] = useSession();
 
@@ -41,11 +34,7 @@ export default function Home(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      <ChallengesProvider
-        // level={props.level}
-        // currentExperience={props.currentExperience}
-        // challengesCompleted={props.challengesCompleted}
-      >
+      <ChallengesProvider>
         <GlobalStyles />
         <SideBar toggleTheme={toggleTheme}/>
         
@@ -74,15 +63,3 @@ export default function Home(props) {
     </ThemeProvider>
   )
 }
-
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const { level, currentExperience, challengesCompleted } = ctx.req.cookies
-
-//   return {
-//     props: {
-//       level: Number(level),
-//       currentExperience: Number(currentExperience),
-//       challengesCompleted: Number(challengesCompleted),
-//     }
-//   }
-// }

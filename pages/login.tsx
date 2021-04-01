@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import { ThemeProvider } from 'styled-components';
 
-import styles from '../styles/Login.module.css';
+import styles from '../src/styles/pages/Login.module.css';
 import GlobalStyles from '../src/styles/globals';
 import light from '../src/styles/themes/light';
 import dark from '../src/styles/themes/dark';

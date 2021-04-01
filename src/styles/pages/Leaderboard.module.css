@@ -1,0 +1,52 @@
+.container {
+  height: 100vh;
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container h1 {
+  color: var(--title)
+}
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.titles p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.titles > div {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-left: 2.3rem;
+}
+
+.titles > div div {
+  width: 100%;
+  display: flex;
+  margin-right: 0.4rem;
+  max-width: 20rem;
+}
+
+.titles > div div p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

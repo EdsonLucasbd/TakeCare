@@ -3,34 +3,45 @@ import { ThemeSwitcher } from './ThemeSwitcher';
 
 import EmojiEvents from '@material-ui/icons/EmojiEventsOutlined';
 import Home from '@material-ui/icons/HomeOutlined';
-import Redirect from './Redirect';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface Props {
   toggleTheme: () => void;
 }
 
 export function SideBar({ toggleTheme }: Props) {
-
-  function handleClick(iconName) {
-    if (iconName.value === 'ranking') {
-      return <Redirect to='/leaderboard' />
-    } else if (iconName.value === 'home') {
-      return <Redirect to='/index' />
-    }
-  }
-
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <img src="/sidebarLogo.png" alt="sideBar logo"/>
 
     <div className={styles.iconsContainer}>
-      <button className="material-icons" onClick={() => handleClick('home')}>
-        <Home fontSize="large" className={styles.home}/>
-      </button>
+      <div className={
+            router.pathname === "/"
+              ? styles.iconSelected
+              : styles.iconNotSelected
+          }
+        >
+        <Link href='/'>
+          <a className="material-icons">
+            <Home fontSize="large" className={styles.home}/>
+          </a>
+        </Link>
+      </div>
 
-      <button className="material-icons" onClick={() => handleClick('ranking')}>
-        <EmojiEvents fontSize="large" className={styles.ranking}/>
-      </button>
+      <div className={
+            router.pathname === "/leaderboard"
+              ? styles.iconSelected
+              : styles.iconNotSelected
+          }
+        >
+        <Link href='/leaderboard'>
+          <a className="material-icons">
+            <EmojiEvents fontSize="large" className={styles.ranking}/>
+          </a>
+        </Link>
+      </div>
     </div>
 
       <div className={styles.switcher}>

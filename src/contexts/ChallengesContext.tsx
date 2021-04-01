@@ -16,6 +16,7 @@ interface ChallengesContextData {
   level: number;
   currentExperience: number; 
   challengesCompleted: number;
+  accumulateExperience: number;
   experienceToNextLevel: number;
   activeChallenge: Challenge;
   levelUp: () => void;
@@ -52,7 +53,6 @@ export function ChallengesProvider({ children }: challengesProviderProps) {
         const { data } = await axios.post('api/server/user', {
           userId: session.userId,
         });
-        console.log(data);
         setName(data.name);
         setLevel(data.level);
         setProfilePicture(data.image);
@@ -149,6 +149,7 @@ export function ChallengesProvider({ children }: challengesProviderProps) {
         levelUp, 
         currentExperience, 
         challengesCompleted,
+        accumulateExperience,
         startNewChallenge,
         activeChallenge,
         resetChallenge,
