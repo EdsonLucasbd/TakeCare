@@ -36,7 +36,7 @@ export default function login() {
         <div className={styles.loginContainer}>
           <h1>Bem-vindo</h1>
           <div>
-            <p>Faça login com para começar</p>
+            <p>Faça login com sua conta <strong>Github</strong> ou <strong>Google</strong> para começar</p>
           </div>
         </div>
 

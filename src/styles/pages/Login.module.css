@@ -45,7 +45,12 @@
 
 .loginContainer div p {
   opacity: 0.6;
-  font-size: 22.7px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.loginContainer div p strong{
+  font-size: 20px;
   font-weight: 500;
 }
 
