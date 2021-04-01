@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   background: var(--blue);
-  color: var(--white);
+  color: white;
   justify-content: space-between;
   align-items: center;
 }

@@ -12,6 +12,7 @@ export default {
     blue: '#5965e0',
     blueDark: '#4953b8',
     blueText: '#b2b9ff',
+    background: '#5965e0',
     text: '#666666',
     blueTwitter: '#2aa9e0',
     borderBottom: '#d7d8da',
