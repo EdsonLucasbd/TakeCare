@@ -31,10 +31,9 @@
 <h2>A ser implementado</h2>
 
 - [x] <s>Tela inicial</s>
-- [ ] Login com github ou google
+- [x] Login com github ou google
 - [x] <s>Side Bar</s>
 - [x] <s>Tema Dark</s>
-- [ ] Compartilhamento nas redes sociais
 - [ ] Responsividade
 
 <h2>🛠️ Como instalar</h2>
