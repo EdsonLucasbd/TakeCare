@@ -31,7 +31,7 @@
 <h2>A ser implementado</h2>
 
 - [x] <s>Tela inicial</s>
-- [x] Login com github ou google
+- [x] <s>Login com github ou google</s>
 - [x] <s>Side Bar</s>
 - [x] <s>Tema Dark</s>
 - [ ] Responsividade
