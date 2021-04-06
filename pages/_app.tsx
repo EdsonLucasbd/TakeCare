@@ -1,8 +1,11 @@
-import '../src/styles/global.css';
+import React from 'react';
+import { Provider } from 'next-auth/client'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <Provider session={pageProps.session}>
+      <Component {...pageProps} />
+    </Provider>
   );
 }
 

@@ -34,8 +34,9 @@ export function CountDown() {
           disabled
           className={styles.countDownButton}
           >
-          Ciclo encerrado
-        </button>
+            Ciclo encerrado
+            <img className={styles.buttonIcons} src="/icons/check.svg" alt="check icon"/>
+          </button>
         ) : (
           <>
             {isActive ? (
@@ -43,8 +44,9 @@ export function CountDown() {
                 type="button" 
                 className={`${styles.countDownButton} ${styles.countDownButtonActive}`}
                 onClick={resetCountDown}
-                >
+              >
                 Abandonar ciclo
+                <p className={styles.buttonIcons}>✖</p>
               </button>
             ) : (
                 <button 
@@ -52,7 +54,8 @@ export function CountDown() {
                 className={styles.countDownButton}
                 onClick={startCountDown}
                 >
-                Iniciar um ciclo
+                  Iniciar um ciclo 
+                  <p className={styles.buttonIcons}>▶</p>
                 </button>
               )
             }

@@ -1,7 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
 import { LevelUpMotal } from "../components/LevelUpModal";
+import { useSession } from "next-auth/client";
+import axios from "axios";
 
 interface Challenge {
   type: 'body'| 'eye';
@@ -10,9 +11,12 @@ interface Challenge {
 }
 
 interface ChallengesContextData {
+  name: string;
+  profilePicture: string;
   level: number;
   currentExperience: number; 
   challengesCompleted: number;
+  accumulateExperience: number;
   experienceToNextLevel: number;
   activeChallenge: Challenge;
   levelUp: () => void;
@@ -24,32 +28,45 @@ interface ChallengesContextData {
 
 interface challengesProviderProps {
   children: ReactNode;
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({ children, ...rest }: challengesProviderProps) {
-
-  const [level, setLevel] = useState(rest.level ?? 1);
-  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
-  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
+export function ChallengesProvider({ children }: challengesProviderProps) {
+  
+  const [level, setLevel] = useState(1);
+  const [currentExperience, setCurrentExperience] = useState(0);
+  const [challengesCompleted, setChallengesCompleted] = useState(0);
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [accumulateExperience, setAccumulateExperience] = useState(0);
+  const [profilePicture, setProfilePicture] = useState("");
+
+  const [session]: any = useSession();
 
   const experienceToNextLevel = Math.pow((level + 1 )* 4, 2)
 
   useEffect(() => {
-    Notification.requestPermission();
+    async function getUser() {
+      if (session) {
+        const { data } = await axios.post('api/server/user', {
+          userId: session.userId,
+        });
+        setName(data.name);
+        setLevel(data.level);
+        setProfilePicture(data.image);
+        setCurrentExperience(data.currentExperience);
+        setAccumulateExperience(data.accumulateExperience);
+        setChallengesCompleted(data.challengesCompleted);
+      }
+    }
+    getUser();
   }, []);
 
   useEffect(() => {
-    Cookies.set('level', String(level));
-    Cookies.set('currentExperience', String(currentExperience));
-    Cookies.set('challengesCompleted', String(challengesCompleted));
-  }, [level, currentExperience, challengesCompleted])
+    Notification.requestPermission();
+  }, []);
 
   function levelUp() {
     setLevel(level+1);
@@ -88,24 +105,51 @@ export function ChallengesProvider({ children, ...rest }: challengesProviderProp
     const { amount } = activeChallenge;
 
     let finalExperience = currentExperience + amount;
+    let newLevel = level;
 
     if (finalExperience >= experienceToNextLevel) {
       finalExperience = finalExperience - experienceToNextLevel;
       levelUp();
+      newLevel += 1;
     }
 
     setCurrentExperience(finalExperience);
     setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
+    setAccumulateExperience(accumulateExperience + amount);
+    updateUser(
+      newLevel,
+      finalExperience,
+      accumulateExperience + amount,
+      challengesCompleted + 1
+    );
   }
+
+  async function updateUser(
+    level: number,
+    currentExperience: number,
+    accumulateExperience: number,
+    challengesCompleted: number,
+  ) {
+      await axios.put('api/server/updateUser', {
+        userId: session.userId,
+        level,
+        currentExperience,
+        accumulateExperience,
+        challengesCompleted
+      });
+    }
 
   return (
     <ChallengesContext.Provider 
       value={{
+        name,
+        profilePicture,
         level, 
         levelUp, 
         currentExperience, 
         challengesCompleted,
+        accumulateExperience,
         startNewChallenge,
         activeChallenge,
         resetChallenge,
