@@ -37,14 +37,28 @@ export default function login() {
             <p>Faça login com sua conta <strong>Github</strong> ou <strong>Google</strong> para começar</p>
           </div>
 
-          <button 
+          {/* <button 
             onClick={() => signIn('auth0')} 
             className={styles.loginButton}>
             <span>Acessar o Take Care</span>
             <div className={styles.arrowIcon}>
               <ArrowForwardIos fontSize="large"/>
             </div>
-          </button>
+          </button> */}
+
+          <div className={styles.socialContainer}>
+            <button 
+              onClick={() => signIn('github')}
+              className={styles.loginSocialButton}>
+              <img className={styles.socialIcon} src="/github.png" alt="Github logo"/>
+            </button>
+
+            <button 
+              onClick={() => signIn('google')}
+              className={styles.loginSocialButton}>
+              <img  className={styles.socialIcon} src="/google.png" alt="Github logo"/>
+            </button>
+          </div>
         </div>
       </div>
     </ThemeProvider>
