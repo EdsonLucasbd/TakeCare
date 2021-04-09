@@ -13,6 +13,7 @@ const options = {
       domain: process.env.AUTH0_DOMAIN
     }),
   ],
+
  
   callbacks: {
     session: async (session: any, user: any, ...rest: any) => {

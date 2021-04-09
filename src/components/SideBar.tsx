@@ -18,38 +18,38 @@ export function SideBar({ toggleTheme }: Props) {
     <div className={styles.container}>
       <img src="/sidebarLogo.png" alt="sideBar logo"/>
 
-    <div className={styles.iconsContainer}>
-      <div className={
-            router.pathname === "/"
-              ? styles.iconSelected
-              : styles.iconNotSelected
-          }
-        >
-        <Link href='/'>
-          <a className="material-icons">
-            <Home fontSize="large"/>
-          </a>
-        </Link>
-      </div>
+      <div className={styles.iconsContainer}>
+        <div className={
+              router.pathname === "/"
+                ? styles.iconSelected
+                : styles.iconNotSelected
+            }
+          >
+          <Link href='/'>
+            <a className="material-icons">
+              <Home fontSize="large"/>
+            </a>
+          </Link>
+        </div>
 
-      <div className={
-            router.pathname === "/leaderboard"
-              ? styles.iconSelected
-              : styles.iconNotSelected
-          }>
-        <Link href='/leaderboard'>
-          <a className="material-icons">
-            <EmojiEvents fontSize="large"/>
-          </a>
-        </Link>
-      </div>
+        <div className={
+              router.pathname === "/leaderboard"
+                ? styles.iconSelected
+                : styles.iconNotSelected
+            }>
+          <Link href='/leaderboard'>
+            <a className="material-icons">
+              <EmojiEvents fontSize="large"/>
+            </a>
+          </Link>
+        </div>
 
-      <div onClick={() => signOut()} className={styles.iconNotSelected}>
-        <a className="material-icons">
-          <Logout fontSize="large"/>
-        </a>
+        <div onClick={() => signOut()} className={styles.iconNotSelected}>
+          <a className="material-icons">
+            <Logout fontSize="large"/>
+          </a>
+        </div>
       </div>
-    </div>
 
       <div className={styles.switcher}>
         <ThemeSwitcher handleToggleTheme={toggleTheme}/>
