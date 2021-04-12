@@ -22,12 +22,12 @@
 ## ✨ Tecnologias
 <p>Foram usadas as seguintes tecnologias:</p>
 <ul>
-  <li>React</li>
-  <li>Next.Js</li>
-  <li>TypeScript</li>
-  <li>NextAuth</li>
-  <li>Auth0</li>
-  <li>MongoDB</li>
+  <li>[React](https://pt-br.reactjs.org/)</li>
+  <li>[Next.Js](https://nextjs.org/)</li>
+  <li>[TypeScript](https://www.typescriptlang.org/)</li>
+  <li>[NextAuth](https://next-auth.js.org/)</li>
+  <li>[Auth0](https://auth0.com/)</li>
+  <li>[MongoDB](https://www.mongodb.com/cloud/atlas)</li>
 </ul>
 
 ## :gear: Elementos e funcionalidades
@@ -53,7 +53,7 @@
 
 ## 🛠️ Como instalar
 ### Pré-requisitos 
-  Para conseguir utilizar o projeto, você precisará instalar as seguintes ferramentas: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [Yarn](https://classic.yarnpkg.com/en/docs/install). Além de criar uma conta na [Auth0](https://manage.auth0.com/dashboard) caso tenha interesse em utilizar o mesmo provedor de autenticação que foi usado neste projeto.
+  Para conseguir utilizar o projeto, você precisará instalar as seguintes ferramentas: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [Yarn](https://classic.yarnpkg.com/en/docs/install). Além de criar uma conta e um banco no mongoDB e uma conta na Auth0 caso tenha interesse em utilizar o mesmo provedor de autenticação que foi usado neste projeto.
 
 ### Váriaveis de Ambiente
   Um ponto muito importante para a perfeita execução do projeto são as váriaveis de Ambiente, você pode conferir quais irá precisar aqui: <a href="https://github.com/EdsonLucasbd/TakeCare/blob/main/env.example">.env.example</a>
