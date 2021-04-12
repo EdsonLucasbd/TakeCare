@@ -14,7 +14,6 @@
 }
 
 .loginContainer {
-  /* position: absolute; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -54,7 +53,6 @@
 }
 
 .buttonContainer{
-  /* position: absolute; */
   top: 33.81rem;
   left: 51.25rem;
   display: flex;
