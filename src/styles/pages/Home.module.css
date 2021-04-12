@@ -8,13 +8,10 @@
   flex-direction: column;
 }
 
-<<<<<<< HEAD
-=======
 .container .xpBar {
   width: 100%;
 }
 
->>>>>>> a020f5c38d75a2c1f3ebcc024e0049ab5be6d623
 .container section {
   flex: 1;
 
@@ -22,8 +19,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 6.25rem;
   align-content: center;
-<<<<<<< HEAD
-=======
 }
 
 @media (max-width: 1150px) {
@@ -53,5 +48,4 @@
   .container section {
     padding-bottom: 100px;
   }
->>>>>>> a020f5c38d75a2c1f3ebcc024e0049ab5be6d623
 }
