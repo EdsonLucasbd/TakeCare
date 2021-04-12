@@ -21,6 +21,7 @@ const options = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     })
   ],
+
  
   callbacks: {
     session: async (session: any, user: any, ...rest: any) => {

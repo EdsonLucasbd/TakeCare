@@ -1,9 +1,9 @@
 .container {
-  position: absolute;
+  position: fixed;
   width: 7rem;
   height: 100%;
-  left: 0rem;
-  top: 0rem;
+  left: 0;
+  top: 0;
   box-shadow: 4px 2px 22px 5px rgba(0,0,0,0.59);
 
   display: flex;
@@ -51,6 +51,48 @@
 
 .iconNotSelected {
   margin-bottom: 1rem;
-  border-left: 4px solid transparent;
+  border: 0;
   transition: all 0.2s
+}
+
+@media (max-width: 1150px) {
+  .container {
+    width: 100%;
+    height: 2rem;
+    padding: 30px 18px;
+    top: 92%;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .container > img {
+    margin-top: 0;
+    width: 2rem;
+  }
+
+  .iconsContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .iconSelected {
+    margin-top: 2rem;
+    border: 0;
+    border-bottom: 4px solid var(--blue-dark);
+    transition: all 0.2s;
+  }
+
+  .iconNotSelected {
+    margin-top: 2rem;
+    border-left: 4px solid transparent;
+    transition: all 0.2s
+  }
+  
+  .switcher {
+    margin-top: 50%;
+    margin-bottom: 50%;
+  }
+
 }

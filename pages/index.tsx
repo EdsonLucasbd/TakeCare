@@ -36,15 +36,19 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <ChallengesProvider>
         <GlobalStyles />
-        <SideBar toggleTheme={toggleTheme}/>
         
-        <div className={styles.container}>
-          <Head>
-            <title>Home | Take Care</title>
-          </Head>
+        <Head>
+          <title>Home | Take Care</title>
+        </Head>
 
-          <ExperienceBar />
-          
+        <div className={styles.container}>
+
+          <div className={styles.xpBar}>
+            <ExperienceBar />
+          </div>
+
+          <SideBar toggleTheme={toggleTheme}/>
+
           <CountDownProvider>
             <section>
               <div>
