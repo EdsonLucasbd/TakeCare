@@ -50,7 +50,7 @@ export default function login() {
             <button 
               onClick={() => signIn('github')}
               className={styles.loginSocialButton}>
-              <img className={styles.socialIcon} src="/github.png" alt="Github logo"/>
+              <img className={styles.socialIcon} src="/Github.png" alt="Github logo"/>
             </button>
 
             <button 
