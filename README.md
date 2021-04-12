@@ -7,7 +7,7 @@
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#gear-elementos-e-funcionalidades"> Funcionalidades</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#up-o-plus">Milha extra</a>
+  <a href="#-o-plus">Milha extra</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#%EF%B8%8F-como-instalar">Instalação</a>
 <p/>
@@ -56,7 +56,7 @@
   Para conseguir utilizar o projeto, você precisará instalar as seguintes ferramentas: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [Yarn](https://classic.yarnpkg.com/en/docs/install). Além de criar uma conta na [Auth0](https://manage.auth0.com/dashboard) caso tenha interesse em utilizar o mesmo provedor de autenticação que foi usado neste projeto.
 
 ### Váriaveis de Ambiente
-  Um ponto muito importante para a perfeita execução do projeto são as váriaveis de Ambiente, você pode conferir quais irá precisar aqui: <a href="">.env.example</a>
+  Um ponto muito importante para a perfeita execução do projeto são as váriaveis de Ambiente, você pode conferir quais irá precisar aqui: <a href="https://github.com/EdsonLucasbd/TakeCare/blob/main/env.example">.env.example</a>
 
 ```bash
 # Clone este repositório
