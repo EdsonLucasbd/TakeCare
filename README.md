@@ -22,8 +22,8 @@
 ## ✨ Tecnologias
 <p>Foram usadas as seguintes tecnologias:</p>
 
-- [React](https://pt-br.reactjs.org/);
-- [Next.Js](https://nextjs.org/);
+- [React](https://pt-br.reactjs.org/)
+- [Next.Js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [NextAuth](https://next-auth.js.org/)
 - [Auth0](https://auth0.com/)
