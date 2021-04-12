@@ -3,10 +3,9 @@ import Head from 'next/head';
 
 import { ThemeProvider } from 'styled-components';
 
-import styles from '../styles/Login.module.css';
+import styles from '../src/styles/pages/Login.module.css';
 import GlobalStyles from '../src/styles/globals';
 import light from '../src/styles/themes/light';
-import dark from '../src/styles/themes/dark';
 
 import usePersistedState from '../src/utils/usePersistedState';
 
@@ -31,21 +30,22 @@ export default function login() {
       
         <img className={styles.bigLogo} src="/bigSimbol.png" alt="take care big simbol"/>
       
-        <img className={styles.logoFull} src="/logo-full2.png" alt="take care logo"/>
-
         <div className={styles.loginContainer}>
+          <img className={styles.logoFull} src="/logo-full.png" alt="take care logo"/>
           <h1>Bem-vindo</h1>
           <div>
-            <img src="/Github.png" alt="github logo"/>
-            <p>Faça login com seu Github<br/> para começar</p>
+            <p>Faça login com sua conta <strong>Github</strong> ou<br/> <strong>Google</strong> para começar</p>
           </div>
-        </div>
 
-        <div className={styles.buttonContainer}>
-          <button type="button" onClick={() => signIn('auth0')} className={styles.loginButton}>Acessar o Take Care</button>
-          <span className={styles.arrowIcon}>
-            <ArrowForwardIos fontSize="large" style={{ color: '#b2b9ff' }}/>
-          </span>
+          <button 
+            onClick={() => signIn('auth0')} 
+            className={styles.loginButton}>
+            <span>Acessar o Take Care</span>
+            <div className={styles.arrowIcon}>
+              <ArrowForwardIos fontSize="large"/>
+            </div>
+          </button>
+          
         </div>
       </div>
     </ThemeProvider>

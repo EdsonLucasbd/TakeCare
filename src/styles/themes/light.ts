@@ -19,4 +19,8 @@ export default {
     levelUpBackground: 'rgba(242, 243, 245, 0.8)',
     boxShadow: 'rgba(0, 0, 0, 0.05)',
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a020f5c38d75a2c1f3ebcc024e0049ab5be6d623

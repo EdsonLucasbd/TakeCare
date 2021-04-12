@@ -1,0 +1,131 @@
+.container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background: var(--blue);
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.bigLogo {
+  position: absolute;
+  width: 48rem;
+  height: 41.25rem;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 95%;
+  padding-left: 55rem;
+  color: var(--text-blue);
+}
+
+.logoFull {
+  width: 70%;
+}
+
+.loginContainer h1 {
+  margin-top: 5rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.loginContainer div {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer div p {
+  opacity: 0.6;
+  font-size: 1.12rem;
+  font-weight: 500;
+}
+
+.loginContainer div p strong{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.buttonContainer{
+  top: 33.81rem;
+  left: 51.25rem;
+  display: flex;
+}
+.loginButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 21.25rem;
+  height: 5rem;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, var(--blue-dark) 0%, rgba(73, 83, 184, 0.2) 100%);
+  border: none;
+  border-radius: 5px 0px 0px 5px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 34px;
+  color: var(--text-blue);
+}
+
+.loginButton div {
+  margin-top: 0;
+}
+
+.loginButton span {
+  margin-left: 20px;
+}
+
+.arrowIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-dark);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.loginButton:hover .arrowIcon {
+  background-color: var(--green);
+  transition: all 0.2s;
+}
+
+@media (max-width: 1100px) {
+  .bigLogo {
+    top: 0;
+    
+    width: 50%;
+    height: auto;
+  }
+
+  .loginContainer {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    padding-top: 5rem;
+    padding-left: 1rem;
+  }
+
+  .loginButton {
+    font-size: 17px;
+  }
+
+}
+
+@media (max-width: 720px) {
+  .loginButton {
+    font-size: 15px;
+  }
+
+}
+

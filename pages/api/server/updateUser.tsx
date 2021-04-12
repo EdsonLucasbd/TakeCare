@@ -10,13 +10,14 @@ export default async (
     level,
     currentExperience,
     accumulateExperience,
-    completedChallenges} = req.body;
+    challengesCompleted} = req.body;
+
     const { db } = await connect();
 
     const response = await db.collection('users').findOneAndUpdate(
-      {_id: userId},
+      {userId},
       {
-        $set: { completedChallenges, level, currentExperience, accumulateExperience },
+        $set: { challengesCompleted, level, currentExperience, accumulateExperience },
       }
     );
 

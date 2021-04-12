@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  border-radius: 5px;
+
+  margin-top: 10px;
+}
+
+.rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  font-size: 2rem;
+  max-width: 5rem;
+}
+
+.userInfos {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile > img {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+
+.profile div {
+  margin-left: 1.3rem;
+}
+
+.profile div strong {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--title);
+}
+
+.profile div p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: flex;
+}
+
+.profile div p img {
+  margin-right: 0.5rem;
+}
+
+.userData {
+  width: 100%;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.userData p:first-child {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.userData p:last-child {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.userData p span {
+  color: var(--blue-dark);
+  margin-right: 5px;
+}
+
+@media (max-width: 700px) {
+  .rank {
+    font-size: 1.5rem;
+    max-width: 4rem;
+  }
+
+  .profile > img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .profile div strong {
+    font-size: 1rem;
+  }
+
+  .userData {
+    max-width: 15rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .rank {
+    font-size: 1rem;
+    padding: 2rem 1.3rem;
+    max-width: 2rem;
+  }
+
+  .userData {
+    max-width: 10rem;
+  }
+
+  .profile {
+    margin-left: 0.5rem;
+  }
+
+  .profile div {
+    margin-left: 0.5rem;
+  }
+
+  .profile div strong {
+    font-size: 0.9rem;
+  }
+
+  .profile div p {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .profile div p img {
+    width: 12px;
+    height: 12px;
+    margin-right: 0.5rem;
+  }
+
+  .userData p:last-child {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

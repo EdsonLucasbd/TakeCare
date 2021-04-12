@@ -5,7 +5,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
   const { userId } = req.body;
   const { db } = await connect();
 
-  const user = await db.collection('users').findOne({userId: userId});
+  const user = await db.collection('users').findOne({userId});
 
   return res.status(200).json(user);
 };

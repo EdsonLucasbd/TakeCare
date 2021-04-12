@@ -1,9 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
 import { LevelUpMotal } from "../components/LevelUpModal";
 import { useSession } from "next-auth/client";
-import axios, { AxiosPromise } from "axios";
+import axios from "axios";
 
 interface Challenge {
   type: 'body'| 'eye';
@@ -17,6 +16,7 @@ interface ChallengesContextData {
   level: number;
   currentExperience: number; 
   challengesCompleted: number;
+  accumulateExperience: number;
   experienceToNextLevel: number;
   activeChallenge: Challenge;
   levelUp: () => void;
@@ -28,18 +28,15 @@ interface ChallengesContextData {
 
 interface challengesProviderProps {
   children: ReactNode;
-  // level: number;
-  // currentExperience: number;
-  // challengesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
 export function ChallengesProvider({ children }: challengesProviderProps) {
   
-  const [level, setLevel] = useState(/*rest.level ??*/ 1);
-  const [currentExperience, setCurrentExperience] = useState(/*rest.currentExperience ??*/ 0);
-  const [challengesCompleted, setChallengesCompleted] = useState(/*rest.challengesCompleted ??*/ 0);
+  const [level, setLevel] = useState(1);
+  const [currentExperience, setCurrentExperience] = useState(0);
+  const [challengesCompleted, setChallengesCompleted] = useState(0);
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const [name, setName] = useState('');
@@ -56,12 +53,11 @@ export function ChallengesProvider({ children }: challengesProviderProps) {
         const { data } = await axios.post('api/server/user', {
           userId: session.userId,
         });
-        console.log(data);
         setName(data.name);
         setLevel(data.level);
         setProfilePicture(data.image);
         setCurrentExperience(data.currentExperience);
-        setAccumulateExperience(data.totalExperience);
+        setAccumulateExperience(data.accumulateExperience);
         setChallengesCompleted(data.challengesCompleted);
       }
     }
@@ -71,12 +67,6 @@ export function ChallengesProvider({ children }: challengesProviderProps) {
   useEffect(() => {
     Notification.requestPermission();
   }, []);
-
-  // useEffect(() => {
-  //   Cookies.set('level', String(level));
-  //   Cookies.set('currentExperience', String(currentExperience));
-  //   Cookies.set('challengesCompleted', String(challengesCompleted));
-  // }, [level, currentExperience, challengesCompleted])
 
   function levelUp() {
     setLevel(level+1);
@@ -130,8 +120,8 @@ export function ChallengesProvider({ children }: challengesProviderProps) {
     updateUser(
       newLevel,
       finalExperience,
-      accumulateExperience,
-      challengesCompleted
+      accumulateExperience + amount,
+      challengesCompleted + 1
     );
   }
 
@@ -159,6 +149,7 @@ export function ChallengesProvider({ children }: challengesProviderProps) {
         levelUp, 
         currentExperience, 
         challengesCompleted,
+        accumulateExperience,
         startNewChallenge,
         activeChallenge,
         resetChallenge,
