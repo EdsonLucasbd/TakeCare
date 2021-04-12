@@ -1,47 +1,78 @@
-<p align="center">🚧 Em construção... 🚧</p>
+<p align="center"><img src="https://raw.githubusercontent.com/EdsonLucasbd/TakeCare/main/public/readmeLogo.png" alt="TakeCare" /><p>
+  
+<p align="center">
+  <a href="#information_source-sobre-o-projeto"> Projeto</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#gear-elementos-e-funcionalidades"> Funcionalidades</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#up-o-plus">Milha extra</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#%EF%B8%8F-como-instalar">Instalação</a>
+<p/>
 
-<h2>:information_source: Sobre o projeto</h2>
-<h4>
-  O Take Care é uma aplicação que utiliza a técnica de Pomodoro com a realização de exercícios físicos para ajudar pessoas que passam muito tempo em frente ao computador.</br>
-  Foi desenvolvida durante a Next Level Week 4 da <a href="https://rocketseat.com.br/">Rocketseat</a>.</br></br>
-  Voçê pode ver o resultado aqui: <a href="https://takecare-gamma.vercel.app/">Take Care</a>
-</h4>
+<p align="center"><img width="700" src="https://raw.githubusercontent.com/EdsonLucasbd/TakeCare/main/public/example.png" alt="Screenshot" /><p>
 
-<h2>✨ Tecnologias</h2>
+## :information_source: Sobre o projeto
+
+#### O Take Care é uma aplicação que utiliza a técnica de Pomodoro com a realização de exercícios físicos para ajudar pessoas que passam muito tempo em frente ao computador.</br> Foi desenvolvida durante a Next Level Week 4 da <a href="https://rocketseat.com.br/">Rocketseat</a>.</br></br> Voçê pode ver o resultado aqui: <a href="https://takecare-gamma.vercel.app/">Take Care</a>
+
+
+## ✨ Tecnologias
 <p>Foram usadas as seguintes tecnologias:</p>
 <ul>
   <li>React</li>
   <li>Next.Js</li>
   <li>TypeScript</li>
+  <li>NextAuth</li>
+  <li>Auth0</li>
+  <li>MongoDB</li>
 </ul>
 
-<h2>:gear: Elementos e funcionalidades</h2>
+## :gear: Elementos e funcionalidades
 <ul>
+  <li>Sistema de login usando NextAuth com Auth0;</li>
+  <li>Sidebar para navegar entre as páginas home e ranking, além de possibilitar a alteração de tema e fazer logout;</li>
   <li>Barra de experiência;</li>
   <li>Cronômetro;</li>
-  <li>Botão "Iniciar ciclo" pra dar inicio ao cronômetro;</li>
-  <li>Botão "Abandonar ciclo" pra parar e resetar o cronômetro;</li>
+  <li>Botão Iniciar/abandonar ciclo;</li>
   <li>Card lateral onde são exibidos os desafios;</li>
-  <li>Botão "Completei", finaliza um desafio e atualiza a experiência e o nível, se possível;</li>
-  <li>Botão "Falhei", finaliza um desafio e reseta o cronômetro;</li>
   <li>Apresenta um modal a cada novo nível alcançado;</li>
   <li>Dados (nível, experiência e desafios concluídos) salvos em cookies;</li>
+  <li>Página de ranking onde todos os usuários da aplicação são mostrados num ranking de acordo com o nivel e experiência;</li>
 </ul>
 
-<h2>A ser implementado</h2>
+## 🆙 O plus
 
-- [x] <s>Tela inicial</s>
-- [x] <s>Login com github ou google</s>
-- [x] <s>Side Bar</s>
-- [x] <s>Tema Dark</s>
-- [ ] Responsividade
+- ✔ Tela inicial
+- ✔ Login com github ou google
+- ✔ Sidebar
+- ✔ Tema Dark
+- ✔ Responsividade
 
-<h2>🛠️ Como instalar</h2>
-<ul>
-  <li>Clone este repositório</li>
-  <li>Instale as dependências com <code>yarn</code></li>
-  <li>Inicie o servidor com <code>yarn dev</code></li>
-</ul>
+## 🛠️ Como instalar
+### Pré-requisitos 
+  Para conseguir utilizar o projeto, você precisará instalar as seguintes ferramentas: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [Yarn](https://classic.yarnpkg.com/en/docs/install). Além de criar uma conta na [Auth0](https://manage.auth0.com/dashboard) caso tenha interesse em utilizar o mesmo provedor de autenticação que foi usado neste projeto.
+
+### Váriaveis de Ambiente
+  Um ponto muito importante para a perfeita execução do projeto são as váriaveis de Ambiente, você pode conferir quais irá precisar aqui: <a href="">.env.example</a>
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/EdsonLucasbd/TakeCare
+
+# Acesse a pasta do projeto no seu terminal
+$ cd TakeCare
+
+# Instale as dependências
+$ yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ yarn dev
+
+# A aplicação abrirá na porta:3000
+```
 <p>Agora você pode acessar <code><a href="https://localhost:3000">localhost:3000</a></code> do seu navegador. <img width="25" src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" alt="Sunglasses emoji" /></p>
 
 <hr>
