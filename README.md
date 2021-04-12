@@ -21,14 +21,13 @@
 
 ## ✨ Tecnologias
 <p>Foram usadas as seguintes tecnologias:</p>
-<ul>
-  <li>[React](https://pt-br.reactjs.org/)</li>
-  <li>[Next.Js](https://nextjs.org/)</li>
-  <li>[TypeScript](https://www.typescriptlang.org/)</li>
-  <li>[NextAuth](https://next-auth.js.org/)</li>
-  <li>[Auth0](https://auth0.com/)</li>
-  <li>[MongoDB](https://www.mongodb.com/cloud/atlas)</li>
-</ul>
+
+- [React](https://pt-br.reactjs.org/);
+- [Next.Js](https://nextjs.org/);
+- [TypeScript](https://www.typescriptlang.org/)
+- [NextAuth](https://next-auth.js.org/)
+- [Auth0](https://auth0.com/)
+- [MongoDB](https://www.mongodb.com/cloud/atlas)
 
 ## :gear: Elementos e funcionalidades
 <ul>
